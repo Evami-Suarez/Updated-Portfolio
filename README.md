@@ -111,9 +111,9 @@ See `assets/README.md` for detailed information about required images and specif
 
 ## 🤝 Connect
 
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
-- **LinkedIn**: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/yourprofile/)
-- **GitHub**: [github.com/yourgithub](https://github.com/yourgithub)
+- **Email**: [suarezevami@gmail.com](mailto:suarezevami@gmail.com)
+- **LinkedIn**: [www.linkedin.com/in/evami-suarez](www.linkedin.com/in/evami-suarez/)
+- **GitHub**: [https://github.com/Evami-Suarez](https://github.com/Evami-Suarez)
 - **Location**: Philippines
 
 ## 🙏 Acknowledgments
