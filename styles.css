@@ -316,6 +316,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
         .hero-subtitle {
             font-size: clamp(1.1rem, 3vw, 1.8rem);
