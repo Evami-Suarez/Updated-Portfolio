@@ -69,6 +69,70 @@ function initializeTheme() {
 // Initialize theme on DOM load
 document.addEventListener('DOMContentLoaded', initializeTheme);
 
+// Grab and drag scroll for projects section
+function initGrabScroll() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    if (!projectsGrid) return;
+    
+    const dotsContainer = document.getElementById('scrollDots');
+    const projectCards = projectsGrid.querySelectorAll('.project-card');
+    const numDots = Math.ceil(projectCards.length / 3);
+    
+    if (dotsContainer && numDots > 1) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < numDots; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'scroll-dot';
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    function updateDots() {
+        const dots = document.querySelectorAll('.scroll-dot');
+        if (!dots.length) return;
+        const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
+        if (maxScroll <= 0) return;
+        const progress = projectsGrid.scrollLeft / maxScroll;
+        const activeIndex = Math.min(Math.round(progress * (dots.length - 1)), dots.length - 1);
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+    }
+    
+    let isDown = false;
+    let startX;
+    let scrollLeftPos;
+    
+    projectsGrid.addEventListener('mousedown', (e) => {
+        if (projectsGrid.classList.contains('list-view')) return;
+        isDown = true;
+        projectsGrid.style.cursor = 'grabbing';
+        startX = e.pageX - projectsGrid.offsetLeft;
+        scrollLeftPos = projectsGrid.scrollLeft;
+    });
+    
+    projectsGrid.addEventListener('mouseleave', () => {
+        isDown = false;
+        projectsGrid.style.cursor = 'grab';
+    });
+    
+    projectsGrid.addEventListener('mouseup', () => {
+        isDown = false;
+        projectsGrid.style.cursor = 'grab';
+    });
+    
+    projectsGrid.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - projectsGrid.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        projectsGrid.scrollLeft = scrollLeftPos - walk;
+    });
+    
+    updateDots();
+    projectsGrid.addEventListener('scroll', updateDots);
+}
+
+document.addEventListener('DOMContentLoaded', initGrabScroll);
+
 // Additional custom JavaScript can be added here
 // For example: analytics, form handling, animations, etc.
 

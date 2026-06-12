@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- ===== FAVICON ===== -->
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- ===== PRIMARY META ===== -->
     <title>Evami Suarez | Frontend Developer & Shopify Assistant — MERN · Laravel · React Native · Philippines</title>
@@ -82,6 +80,16 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- ===== CSS ===== -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (theme === 'dark' || (!theme && systemDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -153,7 +161,7 @@
 
 </head>
 
-<body class="" data-theme="dark">
+<body class="">
     <!-- LOADING SCREEN -->
     <div id="loading-screen">
         <div class="loader-logo-wrap">
@@ -296,18 +304,19 @@
                         </a>
                     </div>
                 </div>
+                <p class="projects-subtitle gradient-text">Web Development</p>
                 <div class="filter-pills mb-3" role="group" aria-label="Filter projects by category">
                     <button class="filter-pill active" data-filter="all">All</button>
                     <button class="filter-pill" data-filter="web">Web Apps</button>
                     <button class="filter-pill" data-filter="mobile">Mobile Responsive</button>
                     <!--   <button class="filter-pill" data-filter="ai">AI / ML</button> -->
                     <button class="filter-pill" data-filter="static">Static Sites</button>
-                    <button class="filter-pill" data-filter="canva">Canva Designs</button>
+                    <!-- <button class="filter-pill" data-filter="canva">Canva Designs</button> -->
                 </div>
-                <p class="projects-count"><span id="visibleCount">11</span> projects</p>
+                <p class="projects-count"><span id="visibleCount">10</span> projects</p>
                 <div class="projects-grid" id="projectsGrid">
 
-                    <!-- Project 0 -->
+                    <!-- Project 0 - Commented out
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
                         <span class="project-num">01</span>
@@ -333,11 +342,12 @@
                             </a>
                         </div>
                     </article>
+                    -->
 
                     <!-- Project 1 -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">02</span>
+                        <span class="project-num">01</span>
                         <div class="project-img">
                             <img src="assets/img/layout-hub.png" alt="Layout Hub — UI Layout Library" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -364,7 +374,7 @@
                     <!-- Project 2 -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">03</span>
+                        <span class="project-num">02</span>
                         <div class="project-img">
                             <img src="assets/img/qreative.png" alt="Qreative — Custom QR Code Studio" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -391,7 +401,7 @@
                     <!-- Project 3 -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">04</span>
+                        <span class="project-num">03</span>
                         <div class="project-img">
                             <img src="assets/img/Build%20In%20Silence.png" alt="Build In Silence" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -418,7 +428,7 @@
                     <!-- Project 4 - Weather App -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">05</span>
+                        <span class="project-num">04</span>
                         <div class="project-img">
                             <img src="assets/img/weather-app.png" alt="Weather App — built with Open-Meteo API" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -445,7 +455,7 @@
                     <!-- Project 5 - Drawing App -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">06</span>
+                        <span class="project-num">05</span>
                         <div class="project-img">
                             <img src="assets/img/drawing-app.png" alt="Drawing App" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -472,7 +482,7 @@
                     <!-- Project 6 -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/SoftwareApplication">
-                        <span class="project-num">07</span>
+                        <span class="project-num">06</span>
                         <div class="project-img">
                             <img src="assets/img/northern-highlands.png" alt="Northern Highlands Web App" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -499,7 +509,7 @@
                     <!-- Project 7 -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/SoftwareApplication">
-                        <span class="project-num">08</span>
+                        <span class="project-num">07</span>
                         <div class="project-img">
                             <img src="assets/img/Noteflow.png" alt="NoteFlow Project" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -526,7 +536,7 @@
                     <!-- Project 8 -->
                     <article class="project-card" data-category="static mobile" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">09</span>
+                        <span class="project-num">08</span>
                         <div class="project-img">
                             <img src="assets/img/garden.png" alt="Garden Wedding Template" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -553,7 +563,7 @@
                     <!-- Project 9 -->
                     <article class="project-card" data-category="static mobile" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">10</span>
+                        <span class="project-num">09</span>
                         <div class="project-img">
                             <img src="assets/img/minimalist.png" alt="Minimalist Wedding Template" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -580,7 +590,7 @@
                     <!-- Project 10 -->
                     <article class="project-card" data-category="web" itemscope=""
                         itemtype="https://schema.org/WebSite">
-                        <span class="project-num">11</span>
+                        <span class="project-num">10</span>
                         <div class="project-img">
                             <img src="assets/img/happy-tails.png" alt="Happy Tails Pet Shop" loading="lazy" width="400" height="220">
                             <div class="project-img-overlay">
@@ -604,7 +614,7 @@
                         </div>
                     </article>
 
-                    <!-- Canva Projects -->
+                    <!-- Canva Projects - commented out
                     <article class="project-card canva-card" data-category="canva" onclick="openCanvaModal(this)">
                         <div class="project-img">
                             <img src="assets/canva/canva1.png" alt="Canva Design 1" loading="lazy">
@@ -645,6 +655,10 @@
                             </div>
                         </div>
                     </article>
+                    -->
+                </div>
+                <div class="scroll-indicator" aria-hidden="true">
+                    <div class="scroll-dots" id="scrollDots"></div>
                 </div>
             </div>
         </section>
